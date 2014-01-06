@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Assignment 1</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<link rel="stylesheet" href="font-awesome-4.0.3/css/font-awesome.css" type="text/css">
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<style>
+	#icon
+	{
+	position:absolute;
+	z-index:1;
+	}
+	#circle
+	{
+	height:200px;
+	background: -webkit-linear-gradient(red, white); /* For Safari */
+	background: -o-linear-gradient(red, white); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(red, white); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(red, white); /* Standard syntax (must be last) */
+	}
+</style>
+<script>
+	height=$(window).height();   // returns height of browser viewport
+	width=$(window).width();   // returns width of browser viewport
+	$(document).ready(function(){
+		$("#circle").css({"left":width/2-100,"top":height/2-100});
+		$("#icon").css({"left":width/2-30,"top":height/2-30});
+	});
+	
+	window.onresize = function(event) {
+		height=$(window).height();   // returns height of browser viewport
+		width=$(window).width();   // returns width of browser viewport
+		
+		$("#circle").css({"left":width/2-100,"top":height/2-100});
+		$("#icon").css({"left":width/2-30,"top":height/2-30});
+	};
+</script>
+</head>
+
+<body>
+	<span><b>Assignment 1: </b><br />Create a circle with an icon in between..and center aligned of browser. Should be inpendant of browser. And fetch the icon from fontawesome.ico . The circle should have gardient effect and should support all browsers</span>
+	<center>
+	<i id="icon" class="fa fa-play-circle fa-5x"></i>
+	<div id="circle" style="height:200px; width:200px; border:1px solid; position:absolute; border-radius:100px;">
+</div>
+</center>
+</body>
+</html>
